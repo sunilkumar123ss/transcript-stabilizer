@@ -12,3 +12,28 @@ class Stabilizer:
         self.history = []
         self.committed = []
         self.finalized = False
+
+    def update(self, text, final=False):
+        if not isinstance(text, str) or not isinstance(final, bool):
+            raise ValueError('Require string text and boolean final')
+        if self.finalized:
+            raise ValueError('Stream already finalized')
+        tokens = text.split()
+        if tokens[:len(self.committed)] != self.committed:
+            raise ValueError('Provider revised an already committed prefix; start a new segment')
+        history = (self.history + [tokens])[-self.observations:]
+        commit = list(self.committed)
+        if final:
+            commit = tokens
+        elif len(history) == self.observations:
+            common = []
+            for group in zip(*history):
+                if len(set(group)) != 1:
+                    break
+                common.append(group[0])
+            if len(common) > len(commit):
+                commit = common
+        self.history = history
+        self.committed = commit
+        self.finalized = final
+        return {'committed': ' '.join(commit), 'provisional': ' '.join(tokens[len(commit):]), 'final': final}
