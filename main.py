@@ -37,3 +37,14 @@ class Stabilizer:
         self.committed = commit
         self.finalized = final
         return {'committed': ' '.join(commit), 'provisional': ' '.join(tokens[len(commit):]), 'final': final}
+
+def stabilize(updates, observations=3):
+    if not isinstance(updates, list):
+        raise ValueError('updates must be a list')
+    stream = Stabilizer(observations)
+    result = []
+    for update in updates:
+        if not isinstance(update, dict) or 'text' not in update:
+            raise ValueError('Every update needs text')
+        result.append(stream.update(update['text'], update.get('final', False)))
+    return result
