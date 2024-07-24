@@ -48,3 +48,16 @@ def stabilize(updates, observations=3):
             raise ValueError('Every update needs text')
         result.append(stream.update(update['text'], update.get('final', False)))
     return result
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', type=Path, help='JSON [{text:str,final:bool},...]')
+    parser.add_argument('--observations', type=int, default=3)
+    args = parser.parse_args()
+    try:
+        updates = json.loads(args.input.read_text()) if args.input else [{'text': 'please turn'}, {'text': 'please turn the'}, {'text': 'please turn on'}, {'text': 'please turn on the light', 'final': True}]
+        print(json.dumps({'input_boundary': 'ASR text supplied externally; no audio inference', 'updates': stabilize(updates, args.observations)}, indent=2))
+    except (ValueError, TypeError, OSError) as exc:
+        parser.error(str(exc))
+if __name__ == '__main__':
+    main()

@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 5 of 15. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 6 of 15. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -17,7 +17,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 3 | 2023-05-31T17:11:00+05:30 | Commit stable prefixes and reject revisions to committed text (present) |
 | 4 | 2024-02-03T17:56:32+05:30 | Replay partial and final transcript hypotheses (present) |
 | 5 | 2024-03-09T09:57:27+05:30 | Add synthetic fixtures for the documented example (present) |
-| 6 | 2024-07-24T19:52:21+05:30 | Expose the command-line interface and default demonstration (later stage) |
+| 6 | 2024-07-24T19:52:21+05:30 | Expose the command-line interface and default demonstration (present) |
 | 7 | 2024-12-17T09:48:07+05:30 | Cover wait then commit common prefix and establish the test harness (later stage) |
 | 8 | 2024-12-22T16:02:13+05:30 | Cover final flush (later stage) |
 | 9 | 2025-06-02T10:23:01+05:30 | Cover committed revision rejected (later stage) |
