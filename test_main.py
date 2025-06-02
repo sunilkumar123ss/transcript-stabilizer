@@ -17,3 +17,11 @@ class StabilizerTests(unittest.TestCase):
         self.assertEqual(s.update(' hi   there ', True)['committed'], 'hi there')
         with self.assertRaises(ValueError):
             s.update('hi there')
+
+    def test_committed_revision_rejected(self):
+        s = Stabilizer(2)
+        s.update('hello')
+        s.update('hello world')
+        with self.assertRaises(ValueError):
+            s.update('goodbye')
+        self.assertEqual(s.update('hello again', True)['committed'], 'hello again')
