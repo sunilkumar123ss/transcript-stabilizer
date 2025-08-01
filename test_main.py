@@ -25,3 +25,6 @@ class StabilizerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             s.update('goodbye')
         self.assertEqual(s.update('hello again', True)['committed'], 'hello again')
+
+    def test_empty_hypothesis_does_not_invent_tokens(self):
+        self.assertEqual(stabilize([{'text': ''}, {'text': 'a'}, {'text': 'a'}])[-1]['committed'], '')
