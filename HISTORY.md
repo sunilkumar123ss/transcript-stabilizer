@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 10 of 15. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 11 of 15. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -22,7 +22,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 8 | 2024-12-22T16:02:13+05:30 | Cover final flush (present) |
 | 9 | 2025-06-02T10:23:01+05:30 | Cover committed revision rejected (present) |
 | 10 | 2025-08-01T11:28:51+05:30 | Cover empty hypothesis does not invent tokens (present) |
-| 11 | 2025-11-30T17:48:39+05:30 | Cover invalid (later stage) |
+| 11 | 2025-11-30T17:48:39+05:30 | Cover invalid (present) |
 | 12 | 2026-04-09T17:45:06+05:30 | Describe package metadata and default verification arguments (later stage) |
 | 13 | 2026-04-23T09:27:43+05:30 | Add the isolated test, demo and help verifier (later stage) |
 | 14 | 2026-06-03T11:20:37+05:30 | Run the repository verifier in continuous integration (later stage) |

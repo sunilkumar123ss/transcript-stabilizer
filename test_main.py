@@ -28,3 +28,13 @@ class StabilizerTests(unittest.TestCase):
 
     def test_empty_hypothesis_does_not_invent_tokens(self):
         self.assertEqual(stabilize([{'text': ''}, {'text': 'a'}, {'text': 'a'}])[-1]['committed'], '')
+
+    def test_invalid(self):
+        with self.assertRaises(ValueError):
+            Stabilizer(1)
+        with self.assertRaises(ValueError):
+            stabilize([{'final': True}])
+        with self.assertRaises(ValueError):
+            Stabilizer().update('x', 1)
+if __name__ == '__main__':
+    unittest.main()
