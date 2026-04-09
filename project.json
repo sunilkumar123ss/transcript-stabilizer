@@ -1,0 +1,8 @@
+{
+  "slug": "transcript-stabilizer",
+  "title": "Streaming Transcript Stabilizer",
+  "description": "Commit token prefixes shared by consecutive hypotheses while leaving changing text provisional.",
+  "category": "voice",
+  "demo_args": [],
+  "expected_exit": 0
+}
